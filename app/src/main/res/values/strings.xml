@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">PetsProject</string>
+
+    <!-- Textos layout_card_view-->
+    <string name="layout_card_view_pet_tvNamePetLCVP_text">Rufo Antonio Mosquera</string>
+
+    <string name="layout_card_view_pet_tvRankPetLCVP_text">111</string>
+</resources>

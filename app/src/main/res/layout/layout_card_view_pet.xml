@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/cvPetLCVP"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="@dimen/layout_card_view_pet_margin_top"
+    android:layout_marginRight="@dimen/layout_card_view_pet_margin_right"
+    android:layout_marginLeft="@dimen/layout_card_view_pet_margin_left"
+    android:layout_marginBottom="@dimen/layout_card_view_pet_margin_bot"
+    card_view:cardBackgroundColor="@color/background_card_view"
+    card_view:cardCornerRadius="@dimen/layout_card_view_pet_radius">
+
+    <LinearLayout
+        android:id="@+id/llPetLCVP"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:orientation="vertical"
+        android:paddingTop="@dimen/layout_card_view_pet_llPetLCVP_padding_top"
+        android:paddingBottom="@dimen/layout_card_view_pet_llPetLCVP_padding_bot">
+
+        <ImageView
+            android:id="@+id/ivPetLCVP"
+            android:layout_width="@dimen/layout_card_view_pet_ivPetLCVP_width"
+            android:layout_height="@dimen/layout_card_view_pet_ivPetLCVP_height"
+            android:layout_marginBottom="@dimen/layout_card_view_pet_ivPetLCVP_margin_bot"
+            android:src="@drawable/img_pet_1"/>
+
+        <LinearLayout
+            android:id="@+id/llPetInfoLCVP"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/layout_card_view_pet_llPetInfoLCVP_height"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:id="@+id/ivWhiteBoneLCVP"
+                android:layout_width="@dimen/layout_card_view_pet_ivWhiteBoneLCVP_width"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ico_huesoblanco"
+                android:layout_marginRight="@dimen/layout_card_view_pet_ivWhiteBoneLCVP_margin_right"/>
+
+            <TextView
+                android:id="@+id/tvNamePetLCVP"
+                android:layout_width="@dimen/layout_card_view_pet_tvNamePetLCVP_width"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="@string/layout_card_view_pet_tvNamePetLCVP_text"
+                android:textColor="@color/layout_card_view_pet_tvNamePetLCVP_text_color"
+                android:textSize="@dimen/layout_card_view_pet_tvNamePetLCVP_text_size"
+                android:maxLength="12"
+                android:textStyle="bold"
+                android:layout_marginRight="@dimen/layout_card_view_pet_tvNamePetLCVP_margin_right"/>
+
+            <TextView
+                android:id="@+id/tvRankPetLCVP"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="@string/layout_card_view_pet_tvRankPetLCVP_text"
+                android:textColor="@color/layout_card_view_pet_tvRankPetLCVP_text_color"
+                android:textSize="@dimen/layout_card_view_pet_tvRankPetLCVP_text_size"
+                android:maxLength="1"
+                android:textStyle="bold"
+                android:layout_marginRight="@dimen/layout_card_view_pet_tvRankPetLCVP_margin_right"/>
+
+            <ImageView
+                android:id="@+id/ivGoldenBoneLCVP"
+                android:layout_width="@dimen/layout_card_view_pet_ivGoldenBoneLCVP_width"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ico_huesodorado"/>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</android.support.v7.widget.CardView>
