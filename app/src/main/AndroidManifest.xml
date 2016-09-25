@@ -2,13 +2,14 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="org.coursera.petsproject">
 
+    <uses-permission android:name="android.permission.INTERNET" />
+
     <application
         android:allowBackup="true"
         android:icon="@drawable/ico_huella"
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -16,17 +17,40 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
-        <activity android:name=".PetLikeActivity"
+        <activity
+            android:name=".PetLikeActivity"
             android:parentActivityName=".MainActivity">
 
-            <!--Soporte para versiones anteriores a 4.0-->
+            <!-- Soporte para versiones anteriores a 4.0 -->
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value=".MainActivity">
+                android:value=".MainActivity" />
+        </activity>
+        <activity
+            android:name=".ContactActivity"
+            android:parentActivityName=".UserEmailActivity">
 
-            </meta-data>
+            <!-- Soporte para versiones anteriores a 4.0 -->
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".UserEmailActivity" />
+        </activity>
+        <activity
+            android:name=".AboutActivity"
+            android:parentActivityName=".MainActivity">
 
+            <!-- Soporte para versiones anteriores a 4.0 -->
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".MainActivity" />
+        </activity>
+        <activity android:name=".UserEmailActivity"
+                  android:parentActivityName=".MainActivity">
+
+            <!-- Soporte para versiones anteriores a 4.0 -->
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".MainActivity" />
         </activity>
     </application>
 

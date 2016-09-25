@@ -85,7 +85,6 @@ public class PetAdapterLCVP extends RecyclerView.Adapter<PetAdapterLCVP.PetViewH
                 }
             }
         });
-
     }
 
     /**

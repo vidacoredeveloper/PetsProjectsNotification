@@ -1,8 +1,44 @@
 <resources>
     <string name="app_name">PetsProject</string>
+    <string name="app_titlle">Petagram</string>
 
     <!-- Textos layout_card_view-->
     <string name="layout_card_view_pet_tvNamePetLCVP_text">Rufo Antonio Mosquera</string>
 
     <string name="layout_card_view_pet_tvRankPetLCVP_text">111</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <!-- Textos menu-->
+    <string name="menu_contacto">Contacto</string>
+    <string name="menu_acerca_de">Acerca de</string>
+
+    <!-- Textos menu-->
+    <string name="activity_about_programmer_name">Victor Daniel Cortés Restrepo</string>
+    <string name="activity_about_age">23 años</string>
+    <string name="activity_about_professional_title">Ingeniero de Software</string>
+    <string name="activity_about_nationality">  Colombia</string>
+    <string name="activity_about_born_in">Bogotá D.C -  </string>
+    <string name="activity_about_experience">Trabaje un año en Freak Animation Studio en la Ciudad de
+    Armenia en Colombia, con el cargo de desarrollador unity en lenguajes javaScript y #C. Actualmente
+    me encuentro trabajando con TSAA en Bogotá Colombia con el cargo de Asesor Junior.</string>
+
+
+    <!-- Textos activity_contact -->
+    <string name="activity_user_email_email">Su direccion de correo</string>
+    <string name="activity_user_email_password">Su contraseña</string>
+    <string name="activity_user_email_btn_accept">Ingresar</string>
+    <string name="activity_user_email_error_email">Por favor ingrese una dirrección de correo GMAIL válida</string>
+
+
+    <!-- Textos activity_contact -->
+    <string name="activity_contact_name">Nombre</string>
+    <string name="activity_contact_email">Correo</string>
+    <string name="activity_contact_message">Mensaje</string>
+    <string name="activity_contact_btn_send">Enviar Comentario</string>
+    <string name="activity_contact_select_app">Seleccionar Aplicación</string>
+    <string name="activity_contact_error_message">Por favor diligencie todos los datos.</string>
+
+
 </resources>

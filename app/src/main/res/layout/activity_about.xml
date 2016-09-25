@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_about"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="org.coursera.petsproject.AboutActivity"
+    android:background="@color/colorAccent">
+
+    <include
+        android:id="@+id/ltbAbautAA"
+        layout="@layout/layout_toolbar"/>
+
+    <TextView
+        android:id="@+id/tvNameAA"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/activity_about_programmer_name"
+        android:textStyle="bold"
+        android:textAlignment="center"
+        android:textSize="@dimen/layout_card_view_pet_tvNamePetLCVP_text_size"
+        android:layout_margin="@dimen/about_activity_margin"/>
+
+    <TextView
+        android:id="@+id/tvTittleAA"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/activity_about_professional_title"
+        android:textSize="@dimen/about_activity_text_size"
+        android:layout_margin="@dimen/about_activity_margin"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_margin="@dimen/about_activity_margin">
+
+        <TextView
+            android:id="@+id/tvBornAA"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/activity_about_born_in"
+            android:textSize="@dimen/about_activity_text_size"/>
+
+        <TextView
+            android:id="@+id/tvNationalityAA"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/activity_about_nationality"
+            android:layout_marginLeft="@dimen/about_activity_margin"
+            android:textSize="@dimen/about_activity_text_size"/>
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/tvAgeAA"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/activity_about_age"
+        android:textSize="@dimen/about_activity_text_size"
+        android:layout_margin="@dimen/about_activity_margin"/>
+
+    <TextView
+        android:id="@+id/tvExperienceAA"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/activity_about_experience"
+        android:textSize="@dimen/about_activity_text_size"
+        android:layout_margin="@dimen/about_activity_margin"/>
+
+</LinearLayout>

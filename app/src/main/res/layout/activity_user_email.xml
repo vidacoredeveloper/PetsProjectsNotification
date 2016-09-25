@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_user_email"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="org.coursera.petsproject.UserEmailActivity"
+    android:background="@color/background_card_view">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <include
+            android:id="@+id/ltbUserEmialUEA"
+            layout="@layout/layout_toolbar"/>
+
+        <LinearLayout
+            android:id="@+id/llContactAC"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="@dimen/about_activity_margin"
+            android:layout_below="@+id/ltbUserEmialUEA">
+
+            <android.support.design.widget.TextInputLayout
+                android:id="@+id/tilEmailUserEmialUEA"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/contact_activity_margin_top">
+
+                <android.support.design.widget.TextInputEditText
+                    android:id="@+id/tietEmailUserEmialUEA"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="textEmailAddress"
+                    android:hint="@string/activity_user_email_email"/>
+
+            </android.support.design.widget.TextInputLayout>
+
+
+            <android.support.design.widget.TextInputLayout
+                android:id="@+id/tilPasswordUserEmialUEA"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/contact_activity_margin_top">
+
+                <android.support.design.widget.TextInputEditText
+                    android:id="@+id/tietPasswordUserEmialUEA"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="textPassword"
+                    android:hint="@string/activity_user_email_password"/>
+
+            </android.support.design.widget.TextInputLayout>
+
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/btnSendUserEmialUEA"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/llContactAC"
+            android:textSize="@dimen/about_activity_text_size"
+            android:text="@string/activity_user_email_btn_accept"
+            android:layout_marginTop="@dimen/contact_activity_btnSendContactAC_margin_top"
+            android:onClick="continueMessage"
+            android:theme="@style/BtnSend"/>
+
+    </RelativeLayout>
+
+</android.support.design.widget.CoordinatorLayout>

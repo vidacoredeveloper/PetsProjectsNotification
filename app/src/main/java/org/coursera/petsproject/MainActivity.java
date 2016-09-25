@@ -1,6 +1,9 @@
 package org.coursera.petsproject;
 
 import android.content.Intent;
+import android.support.design.widget.TabLayout;
+import android.support.v4.app.Fragment;
+import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
@@ -10,6 +13,9 @@ import android.view.Menu;
 import android.view.MenuItem;
 
 import org.coursera.petsproject.adapters.PetAdapterLCVP;
+import org.coursera.petsproject.adapters.ViewPagerAdapter;
+import org.coursera.petsproject.fragments.PetFragment;
+import org.coursera.petsproject.fragments.ProfilePetFragment;
 import org.coursera.petsproject.model.Pet;
 
 import java.util.ArrayList;
@@ -19,7 +25,9 @@ public class MainActivity extends AppCompatActivity {
 
     //Atibutos de la actividad.
     public static ArrayList<Pet> petsList;
-    private RecyclerView rvPetAM;
+    private Toolbar toolbar;
+    private TabLayout tabBarAM;
+    private ViewPager vpPetAM;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,65 +42,44 @@ public class MainActivity extends AppCompatActivity {
      */
     public void initializeComponents () {
         establishToolbar();
-        initializePetRecyclerView();
+        setUPViewPager();
     }
 
     /**
      * Método que asigna la barra de herramientas a la vista.
      */
     public void establishToolbar() {
-        Toolbar toolbar = (Toolbar) findViewById(R.id.ltbPetAM);
-        setSupportActionBar(toolbar);
-        getSupportActionBar().setDisplayShowTitleEnabled(false);
+        toolbar = (Toolbar) findViewById(R.id.tbPetAM);
+        tabBarAM = (TabLayout) findViewById(R.id.tabBarAM);
+        vpPetAM = (ViewPager) findViewById(R.id.vpPetAM);
+
+        if(toolbar != null) {
+            setSupportActionBar(toolbar);
+            getSupportActionBar().setDisplayShowTitleEnabled(false);
+        }
     }
 
     /**
-     * Método que permite inicializar el recycler view.
+     * Método que permite agregar los fragmentos a la lista.
+     * @return fragments, lista de fragmentos.
      */
-    public void initializePetRecyclerView() {
-        rvPetAM = (RecyclerView) findViewById(R.id.rvPetAM);
-        LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this);
-        linearLayoutManager.setOrientation(LinearLayoutManager.VERTICAL);
-        rvPetAM.setLayoutManager(linearLayoutManager);
+    private ArrayList<Fragment> addFragments() {
+        ArrayList<Fragment> fragments = new ArrayList<>();
+        fragments.add(new PetFragment());
+        fragments.add(new ProfilePetFragment());
 
-        generatePetList();
+        return fragments;
     }
 
     /**
-     * Método que genera la lista de mascotas
+     * Método que permite inicializar el viewPager para el control de los fragmentos.
      */
-    public void generatePetList() {
+    private void setUPViewPager() {
+        vpPetAM.setAdapter(new ViewPagerAdapter(getSupportFragmentManager(), addFragments()));
+        tabBarAM.setupWithViewPager(vpPetAM);
 
-        petsList = new ArrayList<>();
-
-        petsList.add(new Pet("Maya", R.drawable.img_pet_1, genetateRandomRating(), R.drawable.ico_huesoblanco));
-        petsList.add(new Pet("Lennon", R.drawable.img_pet_2, genetateRandomRating(), R.drawable.ico_huesoblanco));
-        petsList.add(new Pet("Mia", R.drawable.img_pet_3, genetateRandomRating(), R.drawable.ico_huesoblanco));
-        petsList.add(new Pet("Balto", R.drawable.img_pet_4, genetateRandomRating(), R.drawable.ico_huesoblanco));
-        petsList.add(new Pet("Lola", R.drawable.img_pet_5, genetateRandomRating(), R.drawable.ico_huesoblanco));
-        petsList.add(new Pet("Thor", R.drawable.img_pet_6, genetateRandomRating(), R.drawable.ico_huesoblanco));
-        petsList.add(new Pet("Rufo", R.drawable.img_pet_7, genetateRandomRating(), R.drawable.ico_huesoblanco));
-        petsList.add(new Pet("Bruno", R.drawable.img_pet_8, genetateRandomRating(), R.drawable.ico_huesoblanco));
-        petsList.add(new Pet("Manchas", R.drawable.img_pet_9, genetateRandomRating(), R.drawable.ico_huesoblanco));
-        petsList.add(new Pet("Zick", R.drawable.img_pet_10, genetateRandomRating(), R.drawable.ico_huesoblanco));
-
-        initializePetAdapter();
-    }
-
-    /**
-     * Método que permite generar una claificación al azar a la mascota entre uno y cuatro.
-     * @return random, número generado al azar.
-     */
-    public int genetateRandomRating() {
-        return (int) (Math.floor(Math.random()*(4-1+1)+1));
-    }
-
-    /**
-     * Método que permite inicializar el petAdapter.
-     */
-    public void initializePetAdapter() {
-        PetAdapterLCVP petAdapterLCVP = new PetAdapterLCVP(petsList);
-        rvPetAM.setAdapter(petAdapterLCVP);
+        tabBarAM.getTabAt(0).setIcon(R.drawable.icon_dog_house);
+        tabBarAM.getTabAt(1).setIcon(R.drawable.icon_dog);
     }
 
     /**
@@ -115,6 +102,18 @@ public class MainActivity extends AppCompatActivity {
     public boolean onOptionsItemSelected(MenuItem item) {
 
         switch (item.getItemId()) {
+            case R.id.mContacto:
+
+                goContact();
+
+                break;
+
+            case R.id.mAcercaDe:
+
+                goAbout();
+
+                break;
+
             case R.id.mFavorites:
 
                 goFavoritePets();
@@ -130,6 +129,22 @@ public class MainActivity extends AppCompatActivity {
      */
     public void goFavoritePets() {
         Intent intent = new Intent(this, PetLikeActivity.class);
+        startActivity(intent);
+    }
+
+    /**
+     * Método que nos permite ingresar a la vista de mascotas favoritas.
+     */
+    public void goAbout() {
+        Intent intent = new Intent(this, AboutActivity.class);
+        startActivity(intent);
+    }
+
+    /**
+     * Método que nos permite ingresar a la vista de mascotas favoritas.
+     */
+    public void goContact() {
+        Intent intent = new Intent(this, UserEmailActivity.class);
         startActivity(intent);
     }
 }

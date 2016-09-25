@@ -36,4 +36,19 @@
     <dimen name="layout_card_view_pet_ivGoldenBoneLCVP_width">40dp</dimen>
 
 
+    <!-- Dimensiones layout_card_view_photo_pet-->
+    <dimen name="layout_card_view_photo_pet_icvPhotoPetLCVPP_width">120dp</dimen>
+
+    <dimen name="layout_card_view_photo_pet_ivPhotoPetLCVPP_width">100dp</dimen>
+    <dimen name="layout_card_view_photo_pet_ivPhotoPetLCVPP_height">100dp</dimen>
+
+
+    <!-- Dimensiones about_activity-->
+    <dimen name="about_activity_text_size">20sp</dimen>
+    <dimen name="about_activity_margin">10dp</dimen>
+
+    !-- Dimensiones contact_activity-->
+    <dimen name="contact_activity_margin_top">50dp</dimen>
+    <dimen name="contact_activity_btnSendContactAC_margin_top">135dp</dimen>
+
 </resources>

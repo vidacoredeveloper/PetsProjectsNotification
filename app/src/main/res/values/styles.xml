@@ -8,4 +8,11 @@
         <item name="colorAccent">@color/colorAccent</item>
     </style>
 
+    <!-- Button application theme. -->
+    <style name="BtnSend" parent="Theme.AppCompat.Light">
+        <item name="colorButtonNormal">@color/colorAccent</item>
+        <item name="colorControlHighlight">@color/background_card_view</item>
+        <item name="android:textColor">@color/layout_card_view_pet_tvNamePetLCVP_text_color</item>
+    </style>
+
 </resources>
