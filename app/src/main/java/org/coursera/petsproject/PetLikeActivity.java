@@ -9,6 +9,7 @@ import android.widget.Toast;
 
 import org.coursera.petsproject.adapters.PetAdapterLCVLP;
 import org.coursera.petsproject.adapters.PetAdapterLCVP;
+import org.coursera.petsproject.database.Interactor;
 import org.coursera.petsproject.model.Pet;
 
 import java.util.ArrayList;
@@ -66,7 +67,7 @@ public class PetLikeActivity extends AppCompatActivity {
 
         ArrayList<Pet> petsList = new ArrayList<>();
 
-        for (Pet pet : MainActivity.petsList) {
+        for (Pet pet : MainActivity.interactor.getAllPets()) {
             if(pet.isFavoritePet()) {
                 petsList.add(pet);
             }
@@ -118,6 +119,7 @@ public class PetLikeActivity extends AppCompatActivity {
     public void lastFivePets (ArrayList<Pet> petsList) {
 
         for(int i=petsList.size()-1; i > 4; i--) {
+            MainActivity.interactor.deletePet(petsList.get(i));
             petsList.remove(i);
         }
 

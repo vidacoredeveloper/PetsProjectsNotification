@@ -8,6 +8,7 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import org.coursera.petsproject.MainActivity;
 import org.coursera.petsproject.R;
 import org.coursera.petsproject.model.Pet;
 
@@ -69,6 +70,9 @@ public class PetAdapterLCVP extends RecyclerView.Adapter<PetAdapterLCVP.PetViewH
                     petViewHolder.ivWhiteBoneLCVP.setImageResource(pet.getIconFavoritePet());
                     petViewHolder.tvRankPetLCVP.setText(String.valueOf(pet.getRatingPet()));
 
+                    MainActivity.interactor.insertPet(pet.getNamePet(), pet.getImagePet(),
+                            pet.isFavoritePet(), pet.getDateRatingPet(), pet.getIconFavoritePet(), pet.getRatingPet());
+
                     Snackbar.make(view, pet.getNamePet() + " es mascota favoria.", Snackbar.LENGTH_SHORT)
                             .show();
                 }
@@ -79,6 +83,8 @@ public class PetAdapterLCVP extends RecyclerView.Adapter<PetAdapterLCVP.PetViewH
                     pet.setDateRatingPet(null);
                     petViewHolder.ivWhiteBoneLCVP.setImageResource(pet.getIconFavoritePet());
                     petViewHolder.tvRankPetLCVP.setText(String.valueOf(pet.getRatingPet()));
+
+                    MainActivity.interactor.deletePet(pet);
 
                     Snackbar.make(view, pet.getNamePet() + " no es mascota favoria.", Snackbar.LENGTH_SHORT)
                             .show();

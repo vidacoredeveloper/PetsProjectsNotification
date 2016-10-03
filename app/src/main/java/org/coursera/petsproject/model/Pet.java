@@ -8,6 +8,7 @@ import java.util.Date;
 public class Pet {
 
     //Atributos de la clase.
+    private int idPet;
     private String namePet;
     private int imagePet;
     private int ratingPet;
@@ -26,15 +27,49 @@ public class Pet {
      * @param namePet, cadena correspondiente al nombre de la mascota.
      * @param imagePet, path correspondiente a la imagen de la mascota.
      * @param ratingPet, valor correspondiente a la calificación de la mascota.
-     * @param imageFavoritePet, path correspondiente al icono de mascota favorita de la mascota.
+     * @param iconFavoritePet, path correspondiente al icono de mascota favorita de la mascota.
      */
-    public Pet(String namePet, int imagePet, int ratingPet, int imageFavoritePet) {
+    public Pet(String namePet, int imagePet, int ratingPet, int iconFavoritePet) {
         this.namePet = namePet;
         this.imagePet = imagePet;
         this.ratingPet = ratingPet;
-        this.iconFavoritePet = imageFavoritePet;
+        this.iconFavoritePet = iconFavoritePet;
         dateRatingPet = null;
         favoritePet = false;
+    }
+
+    /**
+     * Método constructor de la clase.
+     * @param idPet, identificador de la mascota en la base de datos.
+     * @param namePet, cadena correspondiente al nombre de la mascota.
+     * @param imagePet, path correspondiente a la imagen de la mascota.
+     * @param ratingPet, valor correspondiente a la calificación de la mascota.
+     * @param iconFavoritePet, path correspondiente al icono de mascota favorita de la mascota.
+     */
+    public Pet(int idPet, String namePet, int imagePet, int ratingPet, int iconFavoritePet) {
+        this.idPet = idPet;
+        this.namePet = namePet;
+        this.imagePet = imagePet;
+        this.ratingPet = ratingPet;
+        this.iconFavoritePet = iconFavoritePet;
+        dateRatingPet = null;
+        favoritePet = false;
+    }
+
+    /**
+     * Método accesor al identificador almacenado en el atributo idPet.
+     * @return idPet, identificador almacenado.
+     */
+    public int getIdPet() {
+        return idPet;
+    }
+
+    /**
+     * Método modificador del identificador almacenado en el atributo idPet.
+     * @param idPet, identificador a almacenar en el atributo.
+     */
+    public void setIdPet(int idPet) {
+        this.idPet = idPet;
     }
 
     /**
@@ -132,4 +167,6 @@ public class Pet {
     public void setIconFavoritePet(int iconFavoritePet) {
         this.iconFavoritePet = iconFavoritePet;
     }
+
+
 }

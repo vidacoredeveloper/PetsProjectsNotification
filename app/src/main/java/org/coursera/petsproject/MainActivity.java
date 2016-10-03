@@ -14,6 +14,7 @@ import android.view.MenuItem;
 
 import org.coursera.petsproject.adapters.PetAdapterLCVP;
 import org.coursera.petsproject.adapters.ViewPagerAdapter;
+import org.coursera.petsproject.database.Interactor;
 import org.coursera.petsproject.fragments.PetFragment;
 import org.coursera.petsproject.fragments.ProfilePetFragment;
 import org.coursera.petsproject.model.Pet;
@@ -25,6 +26,7 @@ public class MainActivity extends AppCompatActivity {
 
     //Atibutos de la actividad.
     public static ArrayList<Pet> petsList;
+    public static Interactor interactor;
     private Toolbar toolbar;
     private TabLayout tabBarAM;
     private ViewPager vpPetAM;
@@ -41,6 +43,7 @@ public class MainActivity extends AppCompatActivity {
      * Método que permite inicializar los componentes correspondientes a la actividad.
      */
     public void initializeComponents () {
+        interactor = new Interactor(getBaseContext());
         establishToolbar();
         setUPViewPager();
     }
