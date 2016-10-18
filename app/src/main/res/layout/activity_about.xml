@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context="org.coursera.petsproject.AboutActivity"
+    tools:context="org.coursera.petsproject.activities.AboutActivity"
     android:background="@color/colorAccent">
 
     <include

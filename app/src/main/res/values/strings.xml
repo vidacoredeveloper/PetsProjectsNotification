@@ -13,6 +13,7 @@
     <!-- Textos menu-->
     <string name="menu_contacto">Contacto</string>
     <string name="menu_acerca_de">Acerca de</string>
+    <string name="menu_configurar_cuenta">Configurar Cuenta</string>
 
     <!-- Textos menu-->
     <string name="activity_about_programmer_name">Victor Daniel Cortés Restrepo</string>
@@ -39,6 +40,10 @@
     <string name="activity_contact_btn_send">Enviar Comentario</string>
     <string name="activity_contact_select_app">Seleccionar Aplicación</string>
     <string name="activity_contact_error_message">Por favor diligencie todos los datos.</string>
+
+    <!-- Textos activity_configuration -->
+    <string name="activity_configuration_tietUsetAC_text">Escriba su usuario</string>
+    <string name="activity_configuration_btnSaveUserAC_text">Guardar Usuario</string>
 
 
 </resources>

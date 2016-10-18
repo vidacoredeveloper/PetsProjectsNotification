@@ -47,8 +47,11 @@
     <dimen name="about_activity_text_size">20sp</dimen>
     <dimen name="about_activity_margin">10dp</dimen>
 
-    !-- Dimensiones contact_activity-->
+    <!-- Dimensiones contact_activity-->
     <dimen name="contact_activity_margin_top">50dp</dimen>
     <dimen name="contact_activity_btnSendContactAC_margin_top">135dp</dimen>
+
+    <!-- Dimensiones configuration_activity-->
+    <dimen name="configuration_activity_tvUsertittleAC_text_size">50sp</dimen>
 
 </resources>

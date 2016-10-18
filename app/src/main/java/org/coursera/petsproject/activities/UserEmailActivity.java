@@ -1,4 +1,4 @@
-package org.coursera.petsproject;
+package org.coursera.petsproject.activities;
 
 import android.content.Intent;
 import android.support.design.widget.Snackbar;
@@ -8,9 +8,11 @@ import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.EditText;
 
+import org.coursera.petsproject.activities.Interfaces.IUserEmailActivity;
+import org.coursera.petsproject.R;
 import org.coursera.petsproject.model.User;
 
-public class UserEmailActivity extends AppCompatActivity {
+public class UserEmailActivity extends AppCompatActivity implements IUserEmailActivity{
 
     /*Atributos de la actividad*/
     public static User user;
@@ -48,6 +50,7 @@ public class UserEmailActivity extends AppCompatActivity {
      * Método que permite contunuar con la instancia para enviar el mensaje por medio del correo.
      * @param view, vista desde la cual se realiza la invocación del método.
      */
+    @Override
     public void continueMessage(View view) {
 
         user = new User(tietEmailUserEmialUEA.getText().toString(), tietPasswordUserEmialUEA.getText().toString());

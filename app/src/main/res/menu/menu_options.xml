@@ -12,9 +12,14 @@
         android:orderInCategory="101"></item>
 
     <item
+        android:id="@+id/mConfigurarCuenta"
+        android:title="@string/menu_configurar_cuenta"
+        android:orderInCategory="102"></item>
+
+    <item
         android:id="@+id/mFavorites"
         android:title="Favorites"
-        android:orderInCategory="102"
+        android:orderInCategory="103"
         app:showAsAction="always"
         android:icon="@drawable/ico_estrellacinco"/>
 </menu>

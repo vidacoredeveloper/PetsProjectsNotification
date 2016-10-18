@@ -5,7 +5,7 @@ import android.content.Context;
 import android.os.AsyncTask;
 import android.widget.Toast;
 
-import org.coursera.petsproject.UserEmailActivity;
+import org.coursera.petsproject.activities.UserEmailActivity;
 
 import java.util.Properties;
 

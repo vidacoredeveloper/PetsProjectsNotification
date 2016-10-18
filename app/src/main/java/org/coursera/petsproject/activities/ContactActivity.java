@@ -1,18 +1,17 @@
-package org.coursera.petsproject;
+package org.coursera.petsproject.activities;
 
-import android.content.Intent;
-import android.net.Uri;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.EditText;
-import android.widget.TextView;
 
+import org.coursera.petsproject.activities.Interfaces.IContactActivity;
+import org.coursera.petsproject.R;
 import org.coursera.petsproject.model.SendEmail;
 
-public class ContactActivity extends AppCompatActivity {
+public class ContactActivity extends AppCompatActivity implements IContactActivity{
 
     /*Atributos de la Actividad*/
     private EditText tietNameContactAC, tietEmailContactAC, tietMessageContactAC;
@@ -50,6 +49,7 @@ public class ContactActivity extends AppCompatActivity {
      * Método para enviar un correo electronico.
      * @param view, vista desde la cual se realiza la invocación del método.
      */
+    @Override
     public void sendEmail(View view) {
 
         if( tietNameContactAC.getText().toString().isEmpty() || tietEmailContactAC.getText().toString().isEmpty()

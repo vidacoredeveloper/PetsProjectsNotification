@@ -1,4 +1,4 @@
-package org.coursera.petsproject;
+package org.coursera.petsproject.activities;
 
 import android.content.Intent;
 import android.support.design.widget.TabLayout;
@@ -6,27 +6,27 @@ import android.support.v4.app.Fragment;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 
-import org.coursera.petsproject.adapters.PetAdapterLCVP;
+import org.coursera.petsproject.activities.Interfaces.IMainActivity;
+import org.coursera.petsproject.R;
 import org.coursera.petsproject.adapters.ViewPagerAdapter;
 import org.coursera.petsproject.database.Interactor;
 import org.coursera.petsproject.fragments.PetFragment;
 import org.coursera.petsproject.fragments.ProfilePetFragment;
 import org.coursera.petsproject.model.Pet;
+import org.coursera.petsproject.rest.model.PetGram;
 
 import java.util.ArrayList;
-import java.util.Random;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements IMainActivity{
 
     //Atibutos de la actividad.
     public static ArrayList<Pet> petsList;
     public static Interactor interactor;
+    public static PetGram petGram;
     private Toolbar toolbar;
     private TabLayout tabBarAM;
     private ViewPager vpPetAM;
@@ -43,9 +43,19 @@ public class MainActivity extends AppCompatActivity {
      * Método que permite inicializar los componentes correspondientes a la actividad.
      */
     public void initializeComponents () {
+        petGram = new PetGram();
+        getParametersPet(petGram);
         interactor = new Interactor(getBaseContext());
         establishToolbar();
         setUPViewPager();
+    }
+
+    public void getParametersPet(PetGram pet){
+        if(getIntent().getExtras() != null){
+            pet.setIdPet(getIntent().getExtras().getString("id"));
+            pet.setNamePet(getIntent().getExtras().getString("name"));
+            pet.setURLPhotoPet(getIntent().getExtras().getString("photo"));
+        }
     }
 
     /**
@@ -66,7 +76,8 @@ public class MainActivity extends AppCompatActivity {
      * Método que permite agregar los fragmentos a la lista.
      * @return fragments, lista de fragmentos.
      */
-    private ArrayList<Fragment> addFragments() {
+    @Override
+    public ArrayList<Fragment> addFragments() {
         ArrayList<Fragment> fragments = new ArrayList<>();
         fragments.add(new PetFragment());
         fragments.add(new ProfilePetFragment());
@@ -77,7 +88,8 @@ public class MainActivity extends AppCompatActivity {
     /**
      * Método que permite inicializar el viewPager para el control de los fragmentos.
      */
-    private void setUPViewPager() {
+    @Override
+    public void setUPViewPager() {
         vpPetAM.setAdapter(new ViewPagerAdapter(getSupportFragmentManager(), addFragments()));
         tabBarAM.setupWithViewPager(vpPetAM);
 
@@ -122,6 +134,12 @@ public class MainActivity extends AppCompatActivity {
                 goFavoritePets();
 
                 break;
+
+            case R.id.mConfigurarCuenta:
+
+                goConfiguration();
+
+                break;
         }
 
         return super.onOptionsItemSelected(item);
@@ -130,6 +148,7 @@ public class MainActivity extends AppCompatActivity {
     /**
      * Método que nos permite ingresar a la vista de mascotas favoritas.
      */
+    @Override
     public void goFavoritePets() {
         Intent intent = new Intent(this, PetLikeActivity.class);
         startActivity(intent);
@@ -138,6 +157,7 @@ public class MainActivity extends AppCompatActivity {
     /**
      * Método que nos permite ingresar a la vista de mascotas favoritas.
      */
+    @Override
     public void goAbout() {
         Intent intent = new Intent(this, AboutActivity.class);
         startActivity(intent);
@@ -146,8 +166,19 @@ public class MainActivity extends AppCompatActivity {
     /**
      * Método que nos permite ingresar a la vista de mascotas favoritas.
      */
+    @Override
     public void goContact() {
         Intent intent = new Intent(this, UserEmailActivity.class);
         startActivity(intent);
+    }
+
+    /**
+     * Método que nos permite ingresar a la vista de configuración de cuenta.
+     */
+    @Override
+    public void goConfiguration() {
+        Intent intent = new Intent(this, ConfigurationActivity.class);
+        startActivity(intent);
+        finish();
     }
 }

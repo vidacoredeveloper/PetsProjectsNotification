@@ -1,5 +1,6 @@
 package org.coursera.petsproject.adapters;
 
+import android.content.Context;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -7,8 +8,11 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.squareup.picasso.Picasso;
+
 import org.coursera.petsproject.R;
 import org.coursera.petsproject.model.Pet;
+import org.coursera.petsproject.rest.model.PetGram;
 
 import java.util.ArrayList;
 
@@ -19,13 +23,14 @@ import java.util.ArrayList;
 public class PhotoPetAdapter extends RecyclerView.Adapter<PhotoPetAdapter.PhotoPetViewHolder> {
 
     //Atributos de la clase.
-    private ArrayList<Pet> pets;
+    private ArrayList<PetGram> pets;
+    private Context context;
 
     /**
      * Método contructor de la clase.
      * @param pets, lista de mascotas.
      */
-    public PhotoPetAdapter(ArrayList<Pet> pets) {
+    public PhotoPetAdapter(ArrayList<PetGram> pets) {
         this.pets = pets;
     }
 
@@ -39,6 +44,7 @@ public class PhotoPetAdapter extends RecyclerView.Adapter<PhotoPetAdapter.PhotoP
     public PhotoPetViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         //Asociamos el layout al recycler view.
         View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.layout_card_view_photo_pet, parent, false);
+        context = parent.getContext();
         return new PhotoPetViewHolder(view);
     }
 
@@ -49,10 +55,12 @@ public class PhotoPetAdapter extends RecyclerView.Adapter<PhotoPetAdapter.PhotoP
      */
     @Override
     public void onBindViewHolder(PhotoPetViewHolder photoPetViewHolder, int position) {
-        Pet pet = pets.get(position);
-
-        photoPetViewHolder.ivPhotoPetLCVPP.setImageResource(pet.getImagePet());
-        photoPetViewHolder.tvRankPhotoPetLCVPP.setText(String.valueOf(pet.getRatingPet()));
+        PetGram pet = pets.get(position);
+        Picasso .with(context)
+                .load(pet.getURLPhotoPet())
+                .placeholder(R.drawable.img_pet_10)
+                .into(photoPetViewHolder.ivPhotoPetLCVPP);
+        photoPetViewHolder.tvRankPhotoPetLCVPP.setText(String.valueOf(pet.getLikesPet()));
     }
 
     /**

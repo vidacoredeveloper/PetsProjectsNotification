@@ -5,7 +5,7 @@
     android:id="@+id/activity_contact"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="org.coursera.petsproject.ContactActivity"
+    tools:context="org.coursera.petsproject.activities.ContactActivity"
     android:background="@color/background_card_view">
 
     <RelativeLayout

@@ -1,8 +1,10 @@
-package org.coursera.petsproject;
+package org.coursera.petsproject.activities;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
+
+import org.coursera.petsproject.R;
 
 public class AboutActivity extends AppCompatActivity {
 

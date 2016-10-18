@@ -9,9 +9,10 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import org.coursera.petsproject.MainActivity;
+import org.coursera.petsproject.activities.MainActivity;
 import org.coursera.petsproject.R;
 import org.coursera.petsproject.adapters.PetAdapterLCVP;
+import org.coursera.petsproject.fragments.Interfaces.IPetFragment;
 import org.coursera.petsproject.model.Pet;
 
 import java.util.ArrayList;
@@ -20,7 +21,7 @@ import java.util.ArrayList;
 /**
  * A simple {@link Fragment} subclass.
  */
-public class PetFragment extends Fragment {
+public class PetFragment extends Fragment implements IPetFragment{
 
     //Atributos del fragmento.
     private RecyclerView rvPetAM;
@@ -56,6 +57,7 @@ public class PetFragment extends Fragment {
     /**
      * Método que genera la lista de mascotas
      */
+    @Override
     public void generatePetList() {
 
         MainActivity.petsList = new ArrayList<>();
@@ -78,6 +80,7 @@ public class PetFragment extends Fragment {
      * Método que permite generar una claificación al azar a la mascota entre uno y cuatro.
      * @return random, número generado al azar.
      */
+    @Override
     public int genetateRandomRating() {
         return (int) (Math.floor(Math.random()*(4-1+1)+1));
     }
@@ -85,6 +88,7 @@ public class PetFragment extends Fragment {
     /**
      * Método que permite inicializar el petAdapter.
      */
+    @Override
     public void initializePetAdapter() {
         PetAdapterLCVP petAdapterLCVP = new PetAdapterLCVP(MainActivity.petsList);
         rvPetAM.setAdapter(petAdapterLCVP);

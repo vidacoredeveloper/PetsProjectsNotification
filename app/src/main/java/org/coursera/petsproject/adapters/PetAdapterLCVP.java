@@ -8,7 +8,7 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import org.coursera.petsproject.MainActivity;
+import org.coursera.petsproject.activities.MainActivity;
 import org.coursera.petsproject.R;
 import org.coursera.petsproject.model.Pet;
 

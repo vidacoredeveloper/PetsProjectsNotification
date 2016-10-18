@@ -5,7 +5,7 @@
     android:id="@+id/activity_user_email"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="org.coursera.petsproject.UserEmailActivity"
+    tools:context="org.coursera.petsproject.activities.UserEmailActivity"
     android:background="@color/background_card_view">
 
     <RelativeLayout

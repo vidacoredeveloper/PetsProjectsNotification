@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_configuration"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="org.coursera.petsproject.activities.ConfigurationActivity"
+    android:background="@color/background_card_view">
+
+    <include
+        android:id="@+id/ltbUserAC"
+        layout="@layout/layout_toolbar"/>
+
+    <TextView
+        android:id="@+id/tvUserTittleAC"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/app_titlle"
+        android:textSize="@dimen/configuration_activity_tvUsertittleAC_text_size"
+        android:textStyle="bold"
+        android:textAlignment="center"/>
+
+    <android.support.design.widget.TextInputLayout
+        android:id="@+id/tilUserAC"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/contact_activity_margin_top">
+
+        <android.support.design.widget.TextInputEditText
+            android:id="@+id/tietUsetAC"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/activity_configuration_tietUsetAC_text"/>
+
+    </android.support.design.widget.TextInputLayout>
+
+    <Button
+        android:id="@+id/btnSaveUserAC"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="@dimen/about_activity_text_size"
+        android:text="@string/activity_configuration_btnSaveUserAC_text"
+        android:layout_marginTop="@dimen/contact_activity_btnSendContactAC_margin_top"
+        android:onClick="saveUser"
+        android:theme="@style/BtnSend"/>
+
+</LinearLayout>
