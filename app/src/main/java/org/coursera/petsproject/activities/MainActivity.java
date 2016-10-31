@@ -7,19 +7,30 @@ import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
+
+import com.google.firebase.iid.FirebaseInstanceId;
 
 import org.coursera.petsproject.activities.Interfaces.IMainActivity;
 import org.coursera.petsproject.R;
 import org.coursera.petsproject.adapters.ViewPagerAdapter;
 import org.coursera.petsproject.database.Interactor;
+import org.coursera.petsproject.firebase.adapters.AdapterDataUser;
+import org.coursera.petsproject.firebase.interfaces.EndPoint;
+import org.coursera.petsproject.firebase.model.ResponseUser;
 import org.coursera.petsproject.fragments.PetFragment;
 import org.coursera.petsproject.fragments.ProfilePetFragment;
 import org.coursera.petsproject.model.Pet;
+import org.coursera.petsproject.model.User;
 import org.coursera.petsproject.rest.model.PetGram;
 
 import java.util.ArrayList;
+
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
 
 public class MainActivity extends AppCompatActivity implements IMainActivity{
 
@@ -140,6 +151,12 @@ public class MainActivity extends AppCompatActivity implements IMainActivity{
                 goConfiguration();
 
                 break;
+
+            case R.id.mRecibirNotificaciones:
+
+                recibirNotificaciones();
+
+                break;
         }
 
         return super.onOptionsItemSelected(item);
@@ -180,5 +197,31 @@ public class MainActivity extends AppCompatActivity implements IMainActivity{
         Intent intent = new Intent(this, ConfigurationActivity.class);
         startActivity(intent);
         finish();
+    }
+
+    /**
+     * Método que nos permite guadar los datos en la base de datos firebase.
+     */
+    @Override
+    public void recibirNotificaciones() {
+        String token = FirebaseInstanceId.getInstance().getToken();
+        String user = petGram.getNamePet();
+        AdapterDataUser adapterDataUser = new AdapterDataUser();
+        EndPoint endPoint = adapterDataUser.establecerConexionRest();
+        final Call<ResponseUser> responseUserCall = endPoint.registrarUsuario(token, user);
+        responseUserCall.enqueue(new Callback<ResponseUser>() {
+            @Override
+            public void onResponse(Call<ResponseUser> call, Response<ResponseUser> response) {
+                ResponseUser responseUser = response.body();
+                Log.d("REGISTRAR_USUARIO_ID", responseUser.getId() + "");
+                Log.d("REGISTRAR_USUARIO_DISPO", responseUser.getIdDispositivo() + "");
+                Log.d("REGISTRAR_USUARIO_USER", responseUser.getIdUsuarioInstagram() + "");
+            }
+
+            @Override
+            public void onFailure(Call<ResponseUser> call, Throwable t) {
+
+            }
+        });
     }
 }

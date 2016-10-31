@@ -21,4 +21,6 @@ public interface IMainActivity {
     public void goContact();
 
     public void goConfiguration();
+
+    public void recibirNotificaciones();
 }

@@ -14,6 +14,7 @@
     <string name="menu_contacto">Contacto</string>
     <string name="menu_acerca_de">Acerca de</string>
     <string name="menu_configurar_cuenta">Configurar Cuenta</string>
+    <string name="menu_notificaciones">Recibir Notificaciones</string>
 
     <!-- Textos menu-->
     <string name="activity_about_programmer_name">Victor Daniel Cortés Restrepo</string>

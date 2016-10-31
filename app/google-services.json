@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "90217332683",
+    "firebase_url": "https://petagram-e3e6d.firebaseio.com",
+    "project_id": "petagram-e3e6d",
+    "storage_bucket": "petagram-e3e6d.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:90217332683:android:2bce82ad1237393f",
+        "android_client_info": {
+          "package_name": "org.coursera.petsproject"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "90217332683-jvdvrkkgpbbtm8ivooct04sfdt821prc.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "org.coursera.petsproject",
+            "certificate_hash": "43CA232FEAF29FDE695E9AD587C175BCDBA0F6C9"
+          }
+        },
+        {
+          "client_id": "90217332683-fkt186o7idmag63q0hfthmlt8efcmgh5.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyATmmbudBVZhm3sc4t8g-_SItuBEjvW2cE"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "90217332683-fkt186o7idmag63q0hfthmlt8efcmgh5.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
